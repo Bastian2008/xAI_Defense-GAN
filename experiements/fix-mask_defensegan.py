@@ -17,7 +17,7 @@ if __name__ == '__main__':
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
     x_test = x_test.astype('float32')/255
     y_test = to_categorical(y_test)
-    mask_function = {'random': utils.random_mask, 'center': utils.center_mask, 'margin': utils.margin_mask}.get(args.mask)
+    mask_function = {'random': utils.random_mask, 'center': utils.center_mask, 'margin': utils.margin_mask}.get(args.mask, utils.center_mask)
 
     for ds in adv_ds:
         with open(f'./drive/MyDrive/Thesis/{ds}/test_rec.pkl', 'rb') as f:
