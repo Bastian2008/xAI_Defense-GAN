@@ -3,10 +3,14 @@ This repository contains the partial implementation of xAI Defense-GAN. It doesn
 
 # Getting started
 - Install all required models, listed in requirements.txt
+```
     pip install -r requirements.txt
+```
 - Run any evaluation in the experiments directory. This are terminal scripts which have some optional parameter (The models to be tested, the adversarial attacks, and for the fix mask the mask type). For example:
+```
     python experiments/grad_defensegan.py --models model_e model_g --dss mnist cw
     python experiments/fix-mask_defensegan.py --models model_a model_b model_d --mask center
+```
 
 # Datasets
 To make easier the reproduction of the experiments presented on the thesis. The adversarial datasets and their reconstruction using Defense-GAN are in the datasets folder. In case the user wants to add more attacks, the script join_recs.py can be used to transform the reconstruction outputted by defense-GAN to the format needed here. 
